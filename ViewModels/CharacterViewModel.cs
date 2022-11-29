@@ -1,7 +1,10 @@
-﻿namespace FighteR_PG.Models
+﻿using FighteR_PG.Models;
+
+namespace FighteR_PG.ViewModels
 {
-    public class Character
+    public class CharacterViewModel
     {
+
         public int CharacterId { get; set; }
         public string Name { get; set; }
         public string Image { get; set; }

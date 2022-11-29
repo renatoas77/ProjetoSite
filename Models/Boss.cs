@@ -8,5 +8,7 @@
         public string Region { get; set; }
         public string RegionImage { get; set; }
         public string GerneralText { get; set; }
+        public int SexId { get; set; }
+        public Sex Sex { get; set; }
     }
 }
