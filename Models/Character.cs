@@ -15,6 +15,7 @@
         public string Dislikes { get; set; }
         public string Hobbie { get; set; }
         public string Food { get; set; }
+        public string Curiosity { get; set; }
         public string Background { get; set; }
         public string Conclusao { get; set; }
         public string SkilName01 { get; set; }
