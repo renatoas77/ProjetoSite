@@ -1,7 +1,7 @@
 ﻿<div>
     <table style="width:100%">
         <tr>
-            <th style="text-align:center; font-size: 35px; color: red; font-weight:700 " ; width="">Mecanicas</th>
+            <th style="text-align:center; font-size: 35px; color: red; font-weight:700 ">Mecanicas</th>
         </tr>
         <tr>
             <td style="text-align:center; font-size: 15px; color: white; font-weight:700" colspan="12">
@@ -14,36 +14,75 @@
         <tr>
             <th style="text-align:center; font-size: 15px; color: white; font-weight:700" colspan="12">
                 Ultimate/Combo breaker
-                <img src="~/images/Ultimate.png" width="333" height="43" >
+                <img src="~/images/Ultimate.png" width="333" height="43">
             </th>
         </tr>
         <tr>
             <td>
-                A barra de ultimate vai enchendo conforme você vai golpeando seu oponente com golpes normais, a quantidade que enche depende do golpe. Quando a barra está cheia o jogador pode optar pode usar essa barra de modo ofensivo ativando sua ultimate ou de modo defensivo ativando o combo breaker enquanto está sendo golpeado fazendo o oponente ser nocauteado.
+                A barra de ultimate vai enchendo conforme você vai golpeando seu oponente com golpes normais(enche normal) ou sendo golpeado(enche lento), a quantidade que enche depende do golpe.
+                Quando a barra está cheia o jogador pode optar pode usar essa barra de modo ofensivo ativando sua ultimate ou de modo defensivo ativando o combo breaker enquanto está sendo golpeado fazendo o oponente ser nocauteado.
+                Cada personagem possui 2 ultimates e deve escolher uma para utilizar em combate.
             </td>
         </tr>
     </table>
     <br />
     <table>
         <tr>
-            <th style="text-align:center; font-size: 15px; color: white; font-weight:700" colspan="12"><img src="~/images/ArcMagic.png" width="50" height="50" />Magico</th>
+            <th style="text-align:center; font-size: 15px; color: white; font-weight:700" colspan="12">
+                MP (Mana Points)/Skills
+                <img src="~/images/MP.png" width="333" height="43">
+            </th>
         </tr>
         <tr>
             <td>
-                Personagens deste arquetipo são especializados em utilizar magia para combate, geralmente possuem skills excelentes de longa distancia capaz de imobilizar seus oponentes para que possam se aproximar com segurança, porem costumam não possuir skills que permitam se movimentar e se aproximar de seu oponentes e quando possuem não são tão fortes.<br />
-                Este tipo de personagem possui 800 pontos de HP, 600 pontos de MP e 200 de regeneração natural de MP. Sua grande quantidade de MP o ajuda a causar um grande dano em seus oponentes
+                A barra de MP permite ao usuario utilizar skills pelo custo de 100MP por skill, uma skill é um golpe especial que causa um dano maior que o normal e não enche nenhum tipo de barra ao atingir um oponente, quando uma skill é ativada todas skills entram em um rapido cooldown de segundos.
+                A barra se regenera automaticamente a taxa de X MP por segundo até certo ponto dependendo do arquetipo do personagem (100 para Fisico, 150 para Arcano e 200 para magico), a partir deste ponto o jogador deve encher a barra golpeando seu oponente(enche normal) ou sendo golpeado(enche lento).
+                A capacidade de armazenar MP mudar para cada Arquetipo, sendo: 400 para Fisico, 500 para Arcano e 600 para magico. Todos personagens possuem um total de 12 skills porem devem escolher 6 para utilizar em combate.
             </td>
         </tr>
     </table>
     <br />
     <table>
         <tr>
-            <th style="text-align:center; font-size: 15px; color: white; font-weight:700" colspan="12"><img src="~/images/ArcArcane.png" width="50" height="50" />Arcano</th>
+            <th style="text-align:center; font-size: 15px; color: white; font-weight:700" colspan="12">
+                Furia
+                <img src="~/images/Furia.png" width="333" height="43">
+            </th>
         </tr>
         <tr>
             <td>
-                Personagens deste tipo são versados tanto em combate corpo a corpo quanto em combate utilizando magia, possuem boas skills para se aproximar do oponente e ataques a distancia, porem não são excelentes em nenhum dos 2 casos o tornando um meio termo entre os arquetipos citados anteriormente.<br />
-                Este tipo de personagem possui 1000 pontos de HP, 500 pontos de MP e 150 de regeneração natural de MP. Possui uma quantidade moderada de HP e MP, que o fazem ter dano e resitencia media.
+                A barra de fúria permite ao personagem entrar em um modo onde sua força, defesa e velocidade aumentam temporariamente. Quanto ativada causa um leve congelamento do tempo ao redor do personagem, faz com que o personagem fique coberto por um tipo de aura e muda as animações de seus golpes. Diferente das outras barras essa barra enche normalmente sendo golpeado pelo oponente e de forma mais lenta quando golpeia o oponente.
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <tr>
+            <th style="text-align:center; font-size: 15px; color: white; font-weight:700" colspan="12">
+                KnockDown
+                <img src="~/images/KnockDown.png" width="333" height="43">
+            </th>
+        </tr>
+        <tr>
+            <td>
+                A barra de KnockDown tem o proposito de evitar combos infinitos, quando um personagem é golpeado sua barra de KnockDown vai enchendo e quanto está completamente cheia o proximo golpe fara o personagem cair zerando sua barra de KnockDown.
+                Quando um personagem golpeia seu oponente sua barra de KnockDown é totalmente zerada.
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <tr>
+            <th style="text-align:center; font-size: 15px; color: white; font-weight:700" colspan="12">
+                Sistema de Maestria/Reset
+            </th>
+        </tr>
+        <tr>
+            <td>
+               O sistema de mastria concede um bonus de 10% de dano ao acertar um golpe em um oponente pela primeira vez. 
+               Pode se executar um Reset para voltar a ganhar o bonus de maestria, existem 2 modos de se executar um reset, sendo o primeiro golpeando um oponente com a barra de KnockDown totalmente cheia e o segundo sendo golpeado pelo oponente.
+               Ao executar um Reset os golpes serão tratados como se tivessem sendo usados pela primeira vez novamente.
+               De modo simplificado para sempre ganhar bonus de maestria evite repetir golpes sempre que possivel. 
             </td>
         </tr>
     </table>
