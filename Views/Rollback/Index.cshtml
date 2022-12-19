@@ -1,0 +1,97 @@
+﻿<div>
+    <table style="width:100%">
+        <tr>
+            <th style="text-align:center; font-size: 35px; color: red; font-weight:700 ">Artigos gerais sobre Rollback</th>
+        </tr>
+    </table>
+    <br />
+    <table style="width:100%">
+        <tr>
+            <th>
+                Pseudocodigo (A ser traduzido para PT/BR)
+            </th>
+        </tr>
+        <tr>
+            <td>
+                Readme: In the following pseudo code, [] indicates a subroutine.<br />
+                Sometimes I choose to write the subroutine inline under the [] in order to maintain context.<br />
+                One important fact about the way rollbacks are handled here is that we are storing state for every frame.<br />
+                In any real implementation you only need to store one game state at a time. Storing a game<br />
+                state for every frame allows us to only rollback to the first frame where the predicted inputs don't match the true ones.<br />
+                <br />
+                <br />
+                ==Constants==
+                MAX_ROLLBACK_FRAMES     := Any Positive Integer         # Specifies the maximum number of frames that can be resimulated<br />
+                FRAME_ADVANTAGE_LIMIT   := Any Positive Integer         # Specifies the number of frames the local client can progress ahead of the remote client before time synchronizing.<br />
+                INITAL_FRAME            := Any Integer                  # Specifies the initial frame the game starts in. Cannot rollback before this frame.<br />
+                <br />
+                [Initialize Variables]
+                local_frame   := INITAL_FRAME                       # Tracks the latest updates frame.<br />
+                remote_frame  := INITAL_FRAME                       # Tracks the latest frame received from the remote client<br />
+                sync_frame    := INITAL_FRAME                       # Tracks the last frame where we synchronized the game state with the remote client. Never rollback before this frame.<br />
+                remote_frame_advantage := 0                         # Latest frame advantage received from the remote client.<br />
+                <br />
+                [Store Game State]<br />
+                Stores the game state for the current frame<br />
+                <br />
+                [Restore Game State]<br />
+                Restores the game state to the frame set in sync_frame<br />
+                <br />
+                [Update Input]<br />
+                Predict the remote player's input if not available yet.<br />
+                Setup the local player and remote player's input for use in [Update Game]<br />
+                <br />
+                [Rollback Condition]<br />
+                local_frame > sync_frame AND remote_frame > sync_frame      # No need to rollback if we don't have a frame after the previous sync frame to synchronize to.<br />
+                <br />
+                [Time Synced]<br />
+                Let local_frame_advantage = local_frame - remote_frame                                   # How far the client is ahead of the last reported frame by the remote client<br />
+                Let frame_advantage_difference = local_frame_advantage - remote_frame_advantage          # How different is the frame advantage reported by the remote client and this one.<br />
+                local_frame_advantage < MAX_ROLLBACK_FRAMES AND frame_advantage_difference <= FRAME_ADVANTAGE_LIMIT     # Only allow the local client to get so far ahead of remote.<br />
+                <br />
+                Start Program:<br />
+                [Initialize Variables]<br />
+                <br />
+                loop:<br />
+                <br />
+                [Update Network]<br />
+                Let remote_frame = latest frame received from the remote client<br />
+                Let remote_frame_advantage = (local_frame - remote_frame) sent from the remote client<br />
+                <br />
+                [Update Synchronization]<br />
+                [Determine the sync_frame]
+                Let final_frame = remote_frame                                          # We will only check inputs until the remote_frame, since we don't have inputs after.<br />
+                if remote_frame > local_frame then final_frame = local_frame           # Incase the remote client is ahead of local, don't check past the local frame.<br />
+                select frames from (sync_frame + 1) through final_frame and find the first frame where predicted and remote inputs don't match<br />
+                if found then<br />
+                sync_frame = found frame - 1        # The found frame is the first frame where inputs don't match, so assume the previous frame is synchronized.<br />
+                else<br />
+                sync_frame = final_frame            # All remote inputs matched the predicted inputs since the last synchronized frame.<br />
+                <br />
+                if [Rollback Condition] then<br />
+                [Execute Rollbacks]<br />
+                [Restore Game State]<br />
+                select inputs from (sync_frame + 1) through local_frame     # Use all the inputs since the last sync frame until the current frame to simulate<br />
+                [Rollback Update]<br />
+                [Update Input]<br />
+                [Update Game]<br />
+                [Store Game State]<br />
+                <br />
+                if [Time Synced] then<br />
+                [Normal Update]<br />
+                Increment local_frame<br />
+                [Get Local Player Input]<br />
+                Read the joystick/pad/keyboard for the local player and store it, associating it with local_frame<br />
+                [Send input to remote client]<br />
+                Send the input and the local_frame to the remote client so it arrives asap.<br />
+                <br />
+                [Update Input]<br />
+                [Update Game]<br />
+                [Store Game State]<br />
+                goto loop<br />
+                <br />
+                End Program<br />
+            </td>
+        </tr>
+    </table>
+</div>
