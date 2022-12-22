@@ -20,12 +20,12 @@
                 state for every frame allows us to only rollback to the first frame where the predicted inputs don't match the true ones.<br />
                 <br />
                 <br />
-                ==Constants==
+                ==Constants== <br />
                 MAX_ROLLBACK_FRAMES     := Any Positive Integer         # Specifies the maximum number of frames that can be resimulated<br />
                 FRAME_ADVANTAGE_LIMIT   := Any Positive Integer         # Specifies the number of frames the local client can progress ahead of the remote client before time synchronizing.<br />
                 INITAL_FRAME            := Any Integer                  # Specifies the initial frame the game starts in. Cannot rollback before this frame.<br />
                 <br />
-                [Initialize Variables]
+                [Initialize Variables] <br />
                 local_frame   := INITAL_FRAME                       # Tracks the latest updates frame.<br />
                 remote_frame  := INITAL_FRAME                       # Tracks the latest frame received from the remote client<br />
                 sync_frame    := INITAL_FRAME                       # Tracks the last frame where we synchronized the game state with the remote client. Never rollback before this frame.<br />
