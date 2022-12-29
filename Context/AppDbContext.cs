@@ -9,10 +9,10 @@ namespace FighteR_PG.Context
         {
 
         }
-        DbSet <Character> Characters { get; set; }
-        DbSet <Boss> Bosses { get; set; }
-        DbSet <Sex> Sexes { get; set; }
-        DbSet <Archetype> Archetypes { get; set; }
+        public DbSet <Character> Characters { get; set; }
+        public DbSet <Boss> Bosses { get; set; }
+        public DbSet <Sex> Sexes { get; set; }
+        public DbSet <Archetype> Archetypes { get; set; }
 
     }
 }

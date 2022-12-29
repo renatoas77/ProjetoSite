@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FighteR_PG.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220918044118_FirstMigration")]
+    [Migration("20221229004837_First-Migration")]
     partial class FirstMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -22,6 +22,19 @@ namespace FighteR_PG.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("FighteR_PG.Models.Archetype", b =>
+                {
+                    b.Property<int>("ArchetypeId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ArchetypeId"), 1L, 1);
+
+                    b.HasKey("ArchetypeId");
+
+                    b.ToTable("Archetypes");
+                });
 
             modelBuilder.Entity("FighteR_PG.Models.Boss", b =>
                 {
@@ -46,7 +59,12 @@ namespace FighteR_PG.Migrations
                     b.Property<string>("RegionImage")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("SexId")
+                        .HasColumnType("int");
+
                     b.HasKey("BossId");
+
+                    b.HasIndex("SexId");
 
                     b.ToTable("Bosses");
                 });
@@ -62,8 +80,8 @@ namespace FighteR_PG.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
-                    b.Property<string>("Archetype")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("ArchetypeId")
+                        .HasColumnType("int");
 
                     b.Property<string>("Background")
                         .HasColumnType("nvarchar(max)");
@@ -72,6 +90,9 @@ namespace FighteR_PG.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Conclusao")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Curiosity")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Dislikes")
@@ -96,6 +117,9 @@ namespace FighteR_PG.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Icon")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Ideias")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Image")
@@ -143,8 +167,8 @@ namespace FighteR_PG.Migrations
                     b.Property<string>("RunningJumpComboImage02")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Sex")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("SexId")
+                        .HasColumnType("int");
 
                     b.Property<string>("SkilDesc01")
                         .HasColumnType("nvarchar(max)");
@@ -304,7 +328,70 @@ namespace FighteR_PG.Migrations
 
                     b.HasKey("CharacterId");
 
+                    b.HasIndex("ArchetypeId");
+
+                    b.HasIndex("SexId");
+
                     b.ToTable("Characters");
+                });
+
+            modelBuilder.Entity("FighteR_PG.Models.Sex", b =>
+                {
+                    b.Property<int>("SexId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SexId"), 1L, 1);
+
+                    b.Property<string>("SexCharacter")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(1)");
+
+                    b.HasKey("SexId");
+
+                    b.ToTable("Sexes");
+                });
+
+            modelBuilder.Entity("FighteR_PG.Models.Boss", b =>
+                {
+                    b.HasOne("FighteR_PG.Models.Sex", "Sex")
+                        .WithMany("Bosses")
+                        .HasForeignKey("SexId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Sex");
+                });
+
+            modelBuilder.Entity("FighteR_PG.Models.Character", b =>
+                {
+                    b.HasOne("FighteR_PG.Models.Archetype", "Archetype")
+                        .WithMany("Characters")
+                        .HasForeignKey("ArchetypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FighteR_PG.Models.Sex", "Sex")
+                        .WithMany("Characters")
+                        .HasForeignKey("SexId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Archetype");
+
+                    b.Navigation("Sex");
+                });
+
+            modelBuilder.Entity("FighteR_PG.Models.Archetype", b =>
+                {
+                    b.Navigation("Characters");
+                });
+
+            modelBuilder.Entity("FighteR_PG.Models.Sex", b =>
+                {
+                    b.Navigation("Bosses");
+
+                    b.Navigation("Characters");
                 });
 #pragma warning restore 612, 618
         }

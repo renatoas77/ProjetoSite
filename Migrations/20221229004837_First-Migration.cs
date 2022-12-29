@@ -9,6 +9,31 @@ namespace FighteR_PG.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Archetypes",
+                columns: table => new
+                {
+                    ArchetypeId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Archetypes", x => x.ArchetypeId);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Sexes",
+                columns: table => new
+                {
+                    SexId = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    SexCharacter = table.Column<string>(type: "nvarchar(1)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Sexes", x => x.SexId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Bosses",
                 columns: table => new
                 {
@@ -18,11 +43,18 @@ namespace FighteR_PG.Migrations
                     Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Region = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RegionImage = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    GerneralText = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    GerneralText = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SexId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Bosses", x => x.BossId);
+                    table.ForeignKey(
+                        name: "FK_Bosses_Sexes_SexId",
+                        column: x => x.SexId,
+                        principalTable: "Sexes",
+                        principalColumn: "SexId",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -36,8 +68,6 @@ namespace FighteR_PG.Migrations
                     Icon = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Specie = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Class = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Archetype = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Sex = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Height = table.Column<int>(type: "int", nullable: false),
                     Weight = table.Column<int>(type: "int", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
@@ -45,6 +75,8 @@ namespace FighteR_PG.Migrations
                     Dislikes = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Hobbie = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Food = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Curiosity = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Ideias = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Background = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Conclusao = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SkilName01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -92,6 +124,16 @@ namespace FighteR_PG.Migrations
                     Fury = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Hit01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Hit02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StandComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StandComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WalkingComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    WalkingComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RunningComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RunningComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    JumpComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    JumpComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RunningJumpComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    RunningJumpComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StandCombo01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StandCombo02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     WalkingCombo01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -102,21 +144,40 @@ namespace FighteR_PG.Migrations
                     JumpCombo02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RunningJumpCombo01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     RunningJumpCombo02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StandComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StandComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WalkingComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    WalkingComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RunningComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RunningComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    JumpComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    JumpComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RunningJumpComboImage01 = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    RunningJumpComboImage02 = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    ArchetypeId = table.Column<int>(type: "int", nullable: false),
+                    SexId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Characters", x => x.CharacterId);
+                    table.ForeignKey(
+                        name: "FK_Characters_Archetypes_ArchetypeId",
+                        column: x => x.ArchetypeId,
+                        principalTable: "Archetypes",
+                        principalColumn: "ArchetypeId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Characters_Sexes_SexId",
+                        column: x => x.SexId,
+                        principalTable: "Sexes",
+                        principalColumn: "SexId",
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Bosses_SexId",
+                table: "Bosses",
+                column: "SexId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Characters_ArchetypeId",
+                table: "Characters",
+                column: "ArchetypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Characters_SexId",
+                table: "Characters",
+                column: "SexId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -126,6 +187,12 @@ namespace FighteR_PG.Migrations
 
             migrationBuilder.DropTable(
                 name: "Characters");
+
+            migrationBuilder.DropTable(
+                name: "Archetypes");
+
+            migrationBuilder.DropTable(
+                name: "Sexes");
         }
     }
 }
