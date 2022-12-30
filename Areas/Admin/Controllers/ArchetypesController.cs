@@ -8,87 +8,88 @@ using Microsoft.EntityFrameworkCore;
 using FighteR_PG.Context;
 using FighteR_PG.Models;
 
-namespace FighteR_PG.Controllers
+namespace FighteR_PG.Areas.Admin.Controllers
 {
-    public class SexesController : Controller
+    [Area("Admin")]
+    public class ArchetypesController : Controller
     {
         private readonly AppDbContext _context;
 
-        public SexesController(AppDbContext context)
+        public ArchetypesController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Sexes
+        // GET: Admin/Archetypes
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Sexes.ToListAsync());
+              return View(await _context.Archetypes.ToListAsync());
         }
 
-        // GET: Sexes/Details/5
+        // GET: Admin/Archetypes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _context.Sexes == null)
+            if (id == null || _context.Archetypes == null)
             {
                 return NotFound();
             }
 
-            var sex = await _context.Sexes
-                .FirstOrDefaultAsync(m => m.SexId == id);
-            if (sex == null)
+            var archetype = await _context.Archetypes
+                .FirstOrDefaultAsync(m => m.ArchetypeId == id);
+            if (archetype == null)
             {
                 return NotFound();
             }
 
-            return View(sex);
+            return View(archetype);
         }
 
-        // GET: Sexes/Create
+        // GET: Admin/Archetypes/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Sexes/Create
+        // POST: Admin/Archetypes/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("SexId,SexCharacter")] Sex sex)
+        public async Task<IActionResult> Create([Bind("ArchetypeId,Name,Description")] Archetype archetype)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(sex);
+                _context.Add(archetype);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(sex);
+            return View(archetype);
         }
 
-        // GET: Sexes/Edit/5
+        // GET: Admin/Archetypes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null || _context.Sexes == null)
+            if (id == null || _context.Archetypes == null)
             {
                 return NotFound();
             }
 
-            var sex = await _context.Sexes.FindAsync(id);
-            if (sex == null)
+            var archetype = await _context.Archetypes.FindAsync(id);
+            if (archetype == null)
             {
                 return NotFound();
             }
-            return View(sex);
+            return View(archetype);
         }
 
-        // POST: Sexes/Edit/5
+        // POST: Admin/Archetypes/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("SexId,SexCharacter")] Sex sex)
+        public async Task<IActionResult> Edit(int id, [Bind("ArchetypeId,Name,Description")] Archetype archetype)
         {
-            if (id != sex.SexId)
+            if (id != archetype.ArchetypeId)
             {
                 return NotFound();
             }
@@ -97,12 +98,12 @@ namespace FighteR_PG.Controllers
             {
                 try
                 {
-                    _context.Update(sex);
+                    _context.Update(archetype);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!SexExists(sex.SexId))
+                    if (!ArchetypeExists(archetype.ArchetypeId))
                     {
                         return NotFound();
                     }
@@ -113,49 +114,49 @@ namespace FighteR_PG.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(sex);
+            return View(archetype);
         }
 
-        // GET: Sexes/Delete/5
+        // GET: Admin/Archetypes/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Sexes == null)
+            if (id == null || _context.Archetypes == null)
             {
                 return NotFound();
             }
 
-            var sex = await _context.Sexes
-                .FirstOrDefaultAsync(m => m.SexId == id);
-            if (sex == null)
+            var archetype = await _context.Archetypes
+                .FirstOrDefaultAsync(m => m.ArchetypeId == id);
+            if (archetype == null)
             {
                 return NotFound();
             }
 
-            return View(sex);
+            return View(archetype);
         }
 
-        // POST: Sexes/Delete/5
+        // POST: Admin/Archetypes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            if (_context.Sexes == null)
+            if (_context.Archetypes == null)
             {
-                return Problem("Entity set 'AppDbContext.Sexes'  is null.");
+                return Problem("Entity set 'AppDbContext.Archetypes'  is null.");
             }
-            var sex = await _context.Sexes.FindAsync(id);
-            if (sex != null)
+            var archetype = await _context.Archetypes.FindAsync(id);
+            if (archetype != null)
             {
-                _context.Sexes.Remove(sex);
+                _context.Archetypes.Remove(archetype);
             }
             
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool SexExists(int id)
+        private bool ArchetypeExists(int id)
         {
-          return _context.Sexes.Any(e => e.SexId == id);
+          return _context.Archetypes.Any(e => e.ArchetypeId == id);
         }
     }
 }
