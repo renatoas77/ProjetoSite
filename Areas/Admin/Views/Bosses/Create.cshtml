@@ -1,12 +1,12 @@
 ﻿@model FighteR_PG.Models.Boss
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar ";
 }
 
-<h1>Create</h1>
+<h1>Criar </h1>
 
-<h4>Boss</h4>
+<h4>Chefe</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -41,15 +41,16 @@
                 <label asp-for="SexId" class="control-label"></label>
                 <select asp-for="SexId" class ="form-control" asp-items="ViewBag.SexId"></select>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Criar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
+  <br />
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
 </div>
 
 @section Scripts {

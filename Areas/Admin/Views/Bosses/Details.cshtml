@@ -1,54 +1,56 @@
 ﻿@model FighteR_PG.Models.Boss
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes ";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
-    <h4>Boss</h4>
+    <h4>Chefe</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
+    <div class="row">
+        <div class="col-1">
+            <img src="@Html.DisplayFor(model => model.Image)" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Region)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Region)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RegionImage)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RegionImage)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GerneralText)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GerneralText)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Sex)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(model => model.Sex.SexCharacter)
-        </dd>
-    </dl>
+        </div>
+    </div>
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Region)
+        </div>
+        <div class="col-1">
+            @Html.DisplayFor(model => model.Region)
+        </div>
+        <div class="col-10">
+            <img src="@Html.DisplayFor(model => model.RegionImage)" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.GerneralText)
+        </div>
+        <div class="col-11">
+            @Html.DisplayFor(model => model.GerneralText)
+        </div>
+    </div>
 </div>
+<br />
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.BossId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.BossId" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
 </div>
