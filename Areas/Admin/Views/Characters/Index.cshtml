@@ -1,0 +1,527 @@
+﻿@model IEnumerable<FighteR_PG.Models.Character>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Image)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Icon)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Specie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Class)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Height)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Likes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Dislikes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hobbie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Food)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Curiosity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ideias)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Background)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Conclusao)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName03)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName04)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName05)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName06)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName07)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName08)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName09)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilName12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc03)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc04)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc05)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc06)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc07)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc08)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc09)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilDesc12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage03)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage04)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage05)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage06)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage07)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage08)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage09)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage10)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage11)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SkilImage12)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Special01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Special02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialDesc01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialDesc02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialImage01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SpecialImage02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fury)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hit01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hit02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StandComboImage01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StandComboImage02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WalkingComboImage01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WalkingComboImage02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunningComboImage01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunningComboImage02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JumpComboImage01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JumpComboImage02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunningJumpComboImage01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunningJumpComboImage02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StandCombo01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StandCombo02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WalkingCombo01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WalkingCombo02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunningCombo01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunningCombo02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JumpCombo01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JumpCombo02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunningJumpCombo01)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RunningJumpCombo02)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Archetype)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sex)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Image)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Icon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Specie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Class)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Likes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Dislikes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hobbie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Food)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Curiosity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ideias)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Background)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Conclusao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName03)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName05)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName06)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName08)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName09)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilName12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc03)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc05)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc06)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc08)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc09)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilDesc12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage03)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage04)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage05)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage06)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage07)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage08)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage09)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage10)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage11)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SkilImage12)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Special01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Special02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialDesc01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialDesc02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialImage01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SpecialImage02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fury)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hit01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Hit02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StandComboImage01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StandComboImage02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WalkingComboImage01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WalkingComboImage02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunningComboImage01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunningComboImage02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JumpComboImage01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JumpComboImage02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunningJumpComboImage01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunningJumpComboImage02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StandCombo01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StandCombo02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WalkingCombo01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WalkingCombo02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunningCombo01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunningCombo02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JumpCombo01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JumpCombo02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunningJumpCombo01)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RunningJumpCombo02)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Archetype.ArchetypeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sex.SexId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CharacterId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CharacterId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CharacterId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

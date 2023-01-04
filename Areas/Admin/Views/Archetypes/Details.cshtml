@@ -1,13 +1,13 @@
 ﻿@model FighteR_PG.Models.Archetype
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes ";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 <div>
-    <h4>Archetype</h4>
+    <h4>Arquetipo</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -25,6 +25,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ArchetypeId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model?.ArchetypeId" class="btn btn-warning">Editar</a> 
+    <a asp-action="Index" class="btn btn-secondary">Voltar</a>
 </div>

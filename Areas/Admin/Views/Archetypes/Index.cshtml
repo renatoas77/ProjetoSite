@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<FighteR_PG.Models.Archetype>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Arquetipos ";
 }
 
-<h1>Index</h1>
+<h1>Arquetipos</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary">Criar novo</a>
 </p>
 <table class="table">
     <thead>
@@ -31,11 +31,13 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ArchetypeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ArchetypeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ArchetypeId">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.ArchetypeId" class="btn btn-info">Detalhes</a> 
+                <a asp-action="Edit" asp-route-id="@item.ArchetypeId" class="btn btn-warning">Editar</a>
+                <a asp-action="Delete" asp-route-id="@item.ArchetypeId" class="btn btn-danger">Deletar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+<a asp-area="admin" asp-controller="AdminHome" asp-action="Index" class="btn btn-secondary">Voltar</a>
