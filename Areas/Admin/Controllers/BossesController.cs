@@ -23,7 +23,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
         // GET: Admin/Bosses
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Bosses.Include(b => b.Sex);
+            var appDbContext = _context.Bosses.Include(b => b.Sex).Include(b => b.Tier);
             return View(await appDbContext.ToListAsync());
         }
 
@@ -37,6 +37,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
 
             var boss = await _context.Bosses
                 .Include(b => b.Sex)
+                .Include(b => b.Tier)
                 .FirstOrDefaultAsync(m => m.BossId == id);
             if (boss == null)
             {
@@ -50,6 +51,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
         public IActionResult Create()
         {
             ViewData["SexId"] = new SelectList(_context.Sexes, "SexId", "SexCharacter");
+            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name");
             return View();
         }
 
@@ -58,7 +60,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BossId,Name,Image,Region,RegionImage,GerneralText,SexId")] Boss boss)
+        public async Task<IActionResult> Create([Bind("BossId,Name,Image,Region,RegionImage,GerneralText,SexId,TierId")] Boss boss)
         {
             if (ModelState.IsValid)
             {
@@ -67,6 +69,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["SexId"] = new SelectList(_context.Sexes, "SexId", "SexCharacter", boss.SexId);
+            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name");
             return View(boss);
         }
 
@@ -84,6 +87,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["SexId"] = new SelectList(_context.Sexes, "SexId", "SexCharacter", boss.SexId);
+            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name");
             return View(boss);
         }
 
@@ -92,7 +96,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BossId,Name,Image,Region,RegionImage,GerneralText,SexId")] Boss boss)
+        public async Task<IActionResult> Edit(int id, [Bind("BossId,Name,Image,Region,RegionImage,GerneralText,SexId,TierId")] Boss boss)
         {
             if (id != boss.BossId)
             {
@@ -120,6 +124,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["SexId"] = new SelectList(_context.Sexes, "SexId", "SexCharacter", boss.SexId);
+            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name");
             return View(boss);
         }
 
@@ -133,6 +138,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
 
             var boss = await _context.Bosses
                 .Include(b => b.Sex)
+                .Include(b => b.Tier)
                 .FirstOrDefaultAsync(m => m.BossId == id);
             if (boss == null)
             {

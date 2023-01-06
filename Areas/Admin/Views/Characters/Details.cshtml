@@ -6,507 +6,537 @@
 
 <h1>Details</h1>
 
+
 <div>
     <h4>Character</h4>
     <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
+    <div class="row">
+        <div class="col-2">
+            <img src="@Html.DisplayFor(model => model.Image)" weight="150" height="300" />
+        </div>
+        <div class="col-2">
+            <img src="  @Html.DisplayFor(model => model.Icon)" height="100" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2" style="text-align:Center;font-size:30px;font-weight:bold">
             @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Image)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Icon)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Icon)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Specie)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(model => model.Specie)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Class)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Class)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Height)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Height)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Weight)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Weight)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Age)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(model => model.Age)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Sex)
+        </div>
+        <div class="col-1">
+            @Html.DisplayFor(model => model.Sex.SexCharacter)
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Height)
+        </div>
+        <div class="col-1">
+            @Html.DisplayFor(model => model.Height)
+        </div>
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Weight)
+        </div>
+        <div class="col-1">
+            @Html.DisplayFor(model => model.Weight)
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Likes)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(model => model.Likes)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Dislikes)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(model => model.Dislikes)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Hobbie)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(model => model.Hobbie)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Food)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-1">
             @Html.DisplayFor(model => model.Food)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Curiosity)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-10">
             @Html.DisplayFor(model => model.Curiosity)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Ideias)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Ideias)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-2" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Background)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-10">
             @Html.DisplayFor(model => model.Background)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-2" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Conclusao)
-        </dt>
-        <dd class = "col-sm-10">
+        </div>
+        <div class="col-10">
             @Html.DisplayFor(model => model.Conclusao)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName01)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName01)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName02)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName02)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName03)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName03)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName04)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName04)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName05)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName05)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName06)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName06)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName07)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName07)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName08)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName08)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName09)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName09)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName10)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName10)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName11)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName11)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName12)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilName12)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc01)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc01)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc02)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc02)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc03)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc03)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc04)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc04)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc05)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc05)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc06)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc06)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc07)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc07)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc08)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc08)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc09)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc09)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc10)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc10)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc11)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc11)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc12)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc12)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage01)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage01)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage02)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage02)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage03)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage03)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage04)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage04)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage05)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage05)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage06)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage06)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage07)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage07)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage08)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage08)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage09)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage09)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage10)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage10)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage11)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage11)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage12)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage12)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Special01)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Special01)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Special02)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Special02)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialDesc01)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SpecialDesc01)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialDesc02)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SpecialDesc02)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialImage01)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SpecialImage01)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialImage02)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SpecialImage02)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Fury)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Fury)
-        </dd>
-        <dt class = "col-sm-2">
+        </div>
+    </div>
+</div>
+
+<div>
+    <h4>Combate</h4>
+    <hr />
+    <div class="row" style="font-weight:bold">
+        @Html.DisplayNameFor(model => model.Class)
+    </div>
+    <div class="row">
+        <div class="col-2">
+            <img src="  @Html.DisplayFor(model => model.Icon)" height="100" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2">
+            @Html.DisplayFor(model => model.Class)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Archetype)
+        </div>
+        <div class="col-1">
+            @Html.DisplayFor(model => model.Archetype.Name)
+        </div>
+    </div>
+    <br />
+
+    <dl class="row">
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Hit01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Hit01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Hit02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Hit02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.StandComboImage01)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.StandComboImage01)
+        <dd class="col-sm-10">
+          <img src="@Html.DisplayFor(model => model.StandComboImage01)" />
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.StandComboImage02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.StandComboImage02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.WalkingComboImage01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.WalkingComboImage01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.WalkingComboImage02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.WalkingComboImage02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RunningComboImage01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RunningComboImage01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RunningComboImage02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RunningComboImage02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JumpComboImage01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JumpComboImage01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JumpComboImage02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JumpComboImage02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RunningJumpComboImage01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RunningJumpComboImage01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RunningJumpComboImage02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RunningJumpComboImage02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.StandCombo01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.StandCombo01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.StandCombo02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.StandCombo02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.WalkingCombo01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.WalkingCombo01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.WalkingCombo02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.WalkingCombo02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RunningCombo01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RunningCombo01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RunningCombo02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RunningCombo02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JumpCombo01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JumpCombo01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.JumpCombo02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.JumpCombo02)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RunningJumpCombo01)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RunningJumpCombo01)
         </dd>
-        <dt class = "col-sm-2">
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.RunningJumpCombo02)
         </dt>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             @Html.DisplayFor(model => model.RunningJumpCombo02)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Archetype)
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName01)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Archetype.ArchetypeId)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName01)
         </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Sex)
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName02)
         </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Sex.SexId)
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName03)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName03)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName04)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName04)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName05)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName05)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName06)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName06)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName07)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName07)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName08)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName08)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName09)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName09)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName10)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName10)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName11)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName11)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilName12)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilName12)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc01)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc01)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc03)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc03)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc04)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc04)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc05)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc05)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc06)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc06)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc07)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc07)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc08)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc08)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc09)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc09)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc10)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc10)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc11)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc11)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilDesc12)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilDesc12)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage01)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage01)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage03)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage03)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage04)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage04)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage05)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage05)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage06)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage06)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage07)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage07)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage08)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage08)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage09)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage09)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage10)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage10)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage11)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage11)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SkilImage12)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SkilImage12)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Special01)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Special01)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Special02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Special02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SpecialDesc01)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SpecialDesc01)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SpecialDesc02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SpecialDesc02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SpecialImage01)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SpecialImage01)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.SpecialImage02)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SpecialImage02)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Fury)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Fury)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ideias)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ideias)
         </dd>
     </dl>
 </div>

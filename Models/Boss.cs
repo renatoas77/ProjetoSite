@@ -10,5 +10,7 @@
         public string GerneralText { get; set; }
         public int SexId { get; set; }
         public Sex Sex { get; set; }
+        public int TierId { get; set; }
+        public Tier Tier { get; set; }
     }
 }

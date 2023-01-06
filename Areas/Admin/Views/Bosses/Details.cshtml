@@ -48,6 +48,14 @@
             @Html.DisplayFor(model => model.GerneralText)
         </div>
     </div>
+     <div class="row">
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Tier)
+        </div>
+        <div class="col-11">
+            @Html.DisplayFor(model => model.Tier.Name)
+        </div>
+    </div>
 </div>
 <br />
 <div>
