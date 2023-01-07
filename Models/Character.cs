@@ -8,6 +8,7 @@
         public string Icon { get; set; }
         public string Specie { get; set; }
         public string Class { get; set; }
+        public string Weapon { get; set; }
         public int Height { get; set; }
         public int Weight { get; set; }
         public int Age { get; set; }

@@ -1,21 +1,18 @@
 ﻿@model FighteR_PG.Models.Character
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalhes ";
 }
 
-<h1>Details</h1>
+<h1>Detalhes</h1>
 
 
 <div>
-    <h4>Character</h4>
+    <h4>Personagem</h4>
     <hr />
     <div class="row">
         <div class="col-2">
             <img src="@Html.DisplayFor(model => model.Image)" weight="150" height="300" />
-        </div>
-        <div class="col-2">
-            <img src="  @Html.DisplayFor(model => model.Icon)" height="100" />
         </div>
     </div>
     <div class="row">
@@ -131,9 +128,17 @@
     </div>
     <div class="row">
         <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Weapon)
+        </div>
+        <div class="col-2">
+            @Html.DisplayFor(model => model.Weapon)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Archetype)
         </div>
-        <div class="col-1">
+        <div class="col-2">
             @Html.DisplayFor(model => model.Archetype.Name)
         </div>
     </div>
