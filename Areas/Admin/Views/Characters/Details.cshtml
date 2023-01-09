@@ -108,6 +108,14 @@
             @Html.DisplayFor(model => model.Conclusao)
         </div>
     </div>
+     <div class="row">
+        <div class="col-2" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Ideias)
+        </div>
+        <div class="col-10">
+            @Html.DisplayFor(model => model.Ideias)
+        </div>
+    </div>
 </div>
 
 <div>
@@ -138,412 +146,307 @@
         <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Archetype)
         </div>
-        <div class="col-2">
+        <div class="col-11">
             @Html.DisplayFor(model => model.Archetype.Name)
         </div>
     </div>
-    <br />
-
-    <dl class="row">
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Hit01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Hit01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Hit02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Hit02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StandComboImage01)
-        </dt>
-        <dd class="col-sm-10">
-          <img src="@Html.DisplayFor(model => model.StandComboImage01)" />
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StandComboImage02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StandComboImage02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WalkingComboImage01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WalkingComboImage01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WalkingComboImage02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WalkingComboImage02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningComboImage01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningComboImage01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningComboImage02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningComboImage02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.JumpComboImage01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.JumpComboImage01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.JumpComboImage02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.JumpComboImage02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningJumpComboImage01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningJumpComboImage01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningJumpComboImage02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningJumpComboImage02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StandCombo01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StandCombo01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.StandCombo02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.StandCombo02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WalkingCombo01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WalkingCombo01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.WalkingCombo02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.WalkingCombo02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningCombo01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningCombo01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningCombo02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningCombo02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.JumpCombo01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.JumpCombo01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.JumpCombo02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.JumpCombo02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningJumpCombo01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningJumpCombo01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningJumpCombo02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningJumpCombo02)
-        </dd>
-
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName03)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName03)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName04)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName04)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName05)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName05)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName06)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName06)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName07)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName07)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName08)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName08)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName09)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName09)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName10)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName10)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName11)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName11)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilName12)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilName12)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc03)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc03)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc04)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc04)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc05)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc05)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc06)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc06)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc07)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc07)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc08)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc08)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc09)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc09)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc10)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc10)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc11)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc11)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilDesc12)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilDesc12)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage03)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage03)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage04)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage04)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage05)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage05)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage06)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage06)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage07)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage07)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage08)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage08)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage09)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage09)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage10)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage10)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage11)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage11)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SkilImage12)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SkilImage12)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Special01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Special01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Special02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Special02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialDesc01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SpecialDesc01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialDesc02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SpecialDesc02)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialImage01)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SpecialImage01)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.SpecialImage02)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.SpecialImage02)
-        </dd>
-        <dt class="col-sm-2">
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Fury)
-        </dt>
-        <dd class="col-sm-10">
+        </div>
+        <div class="col-11">
             @Html.DisplayFor(model => model.Fury)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Ideias)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Ideias)
-        </dd>
-    </dl>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Hit01)
+        </div>
+        <div class="col-1">
+            @Html.DisplayFor(model => model.Hit01)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-1" style="font-weight:bold">
+            @Html.DisplayNameFor(model => model.Hit02)
+        </div>
+        <div class="col-1">
+            @Html.DisplayFor(model => model.Hit02)
+        </div>
+    </div>
+    <br />
+    <table>
+        <tr> <th colspan="12" style="font-weight:bold">Combos</th></tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.StandComboImage01)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.StandCombo01)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.StandComboImage02)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.StandCombo02)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.WalkingComboImage01)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.WalkingCombo01)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.WalkingComboImage02)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.WalkingCombo02)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.RunningComboImage01)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.RunningCombo01)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.RunningComboImage02)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.RunningCombo02)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.JumpComboImage01)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.JumpCombo01)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.JumpComboImage02)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.JumpCombo02)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.RunningJumpComboImage01)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.RunningJumpCombo01)
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <div class="col-7" style="font-weight:bold">
+                    <img src="@Html.DisplayFor(model => model.RunningJumpComboImage02)" />
+                </div>
+            </th>
+            <td>
+                <div class="col-5">
+                    @Html.DisplayFor(model => model.RunningJumpCombo02)
+                </div>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <tr>
+            <th colspan="12" style="font-weight:bold">Skills</th>
+        </tr>
+        <tr>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage01)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage02)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage03)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage04)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage05)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage06)" />
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName01)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName02)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName03)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName04)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName05)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName06)
+            </th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc01)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc02)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc03)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc04)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc05)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc06)
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage07)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage08)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage09)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage10)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage11)" />
+            </td>
+            <td style="text-align:center" ; colspan="2">
+                <img src="@Html.DisplayFor(model => model.SkilImage12)" />
+            </td>
+        </tr>
+        <tr>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName07)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName08)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName09)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName10)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName11)
+            </th>
+            <th colspan="2">
+                @Html.DisplayFor(model => model.SkilName12)
+            </th>
+        </tr>
+        <tr>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc07)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc08)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc09)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc10)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc11)
+            </td>
+            <td colspan="2">
+                @Html.DisplayFor(model => model.SkilDesc12)
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table>
+        <tr>
+            <td style="text-align:center"; colspan="1">
+                <img src="@Html.DisplayFor(model => model.SpecialImage01)" />
+                <br />
+                @Html.DisplayFor(model => model.Special01)
+            </td>
+           <td colspan="11">
+                 @Html.DisplayFor(model => model.SpecialDesc01)
+            </td>
+        </tr> 
+        <tr>
+            <td style="text-align:center"; colspan="1">
+                <img src="@Html.DisplayFor(model => model.SpecialImage02)" />
+                <br />
+                @Html.DisplayFor(model => model.Special02)
+            </td>
+           <td colspan="11">
+                 @Html.DisplayFor(model => model.SpecialDesc02)
+            </td>
+        </tr>
+    </table>
 </div>
 <div>
     <a asp-action="Edit" asp-route-id="@Model?.CharacterId">Edit</a> |
