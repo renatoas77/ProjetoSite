@@ -14,48 +14,48 @@
         public int Age { get; set; }
         public string Likes { get; set; }
         public string Dislikes { get; set; }
-        public string Hobbie { get; set; }
+        public string Hobby { get; set; }
         public string Food { get; set; }
         public string Curiosity { get; set; }
         public string Ideias { get; set; }
         public string Background { get; set; }
         public string Conclusao { get; set; }
-        public string SkilName01 { get; set; }
-        public string SkilName02 { get; set; }
-        public string SkilName03 { get; set; }
-        public string SkilName04 { get; set; }
-        public string SkilName05 { get; set; }
-        public string SkilName06 { get; set; }
-        public string SkilName07 { get; set; }
-        public string SkilName08 { get; set; }
-        public string SkilName09 { get; set; }
-        public string SkilName10 { get; set; }
-        public string SkilName11 { get; set; }
-        public string SkilName12 { get; set; }
-        public string SkilDesc01 { get; set; }
-        public string SkilDesc02 { get; set; }
-        public string SkilDesc03 { get; set; }
-        public string SkilDesc04 { get; set; }
-        public string SkilDesc05 { get; set; }
-        public string SkilDesc06 { get; set; }
-        public string SkilDesc07 { get; set; }
-        public string SkilDesc08 { get; set; }
-        public string SkilDesc09 { get; set; }
-        public string SkilDesc10 { get; set; }
-        public string SkilDesc11 { get; set; }
-        public string SkilDesc12 { get; set; }
-        public string SkilImage01 { get; set; }
-        public string SkilImage02 { get; set; }
-        public string SkilImage03 { get; set; }
-        public string SkilImage04 { get; set; }
-        public string SkilImage05 { get; set; }
-        public string SkilImage06 { get; set; }
-        public string SkilImage07 { get; set; }
-        public string SkilImage08 { get; set; }
-        public string SkilImage09 { get; set; }
-        public string SkilImage10 { get; set; }
-        public string SkilImage11 { get; set; }
-        public string SkilImage12 { get; set; }
+        public string SkillName01 { get; set; }
+        public string SkillName02 { get; set; }
+        public string SkillName03 { get; set; }
+        public string SkillName04 { get; set; }
+        public string SkillName05 { get; set; }
+        public string SkillName06 { get; set; }
+        public string SkillName07 { get; set; }
+        public string SkillName08 { get; set; }
+        public string SkillName09 { get; set; }
+        public string SkillName10 { get; set; }
+        public string SkillName11 { get; set; }
+        public string SkillName12 { get; set; }
+        public string SkillDesc01 { get; set; }
+        public string SkillDesc02 { get; set; }
+        public string SkillDesc03 { get; set; }
+        public string SkillDesc04 { get; set; }
+        public string SkillDesc05 { get; set; }
+        public string SkillDesc06 { get; set; }
+        public string SkillDesc07 { get; set; }
+        public string SkillDesc08 { get; set; }
+        public string SkillDesc09 { get; set; }
+        public string SkillDesc10 { get; set; }
+        public string SkillDesc11 { get; set; }
+        public string SkillDesc12 { get; set; }
+        public string SkillImage01 { get; set; }
+        public string SkillImage02 { get; set; }
+        public string SkillImage03 { get; set; }
+        public string SkillImage04 { get; set; }
+        public string SkillImage05 { get; set; }
+        public string SkillImage06 { get; set; }
+        public string SkillImage07 { get; set; }
+        public string SkillImage08 { get; set; }
+        public string SkillImage09 { get; set; }
+        public string SkillImage10 { get; set; }
+        public string SkillImage11 { get; set; }
+        public string SkillImage12 { get; set; }
         public string Special01 { get; set; }
         public string Special02 { get; set; }
         public string SpecialDesc01 { get; set; }
