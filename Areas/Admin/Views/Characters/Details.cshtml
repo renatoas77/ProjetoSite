@@ -108,7 +108,7 @@
             @Html.DisplayFor(model => model.Conclusao)
         </div>
     </div>
-     <div class="row">
+    <div class="row">
         <div class="col-2" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Ideias)
         </div>
@@ -166,7 +166,7 @@
             @Html.DisplayFor(model => model.Hit02)
         </div>
     </div>
-     <div class="row">
+    <div class="row">
         <div class="col-1" style="font-weight:bold">
             @Html.DisplayNameFor(model => model.Fury)
         </div>
@@ -175,151 +175,113 @@
         </div>
     </div>
     <br />
-    <table>
-        <tr> <th colspan="12" style="font-weight:bold">Combos</th></tr>
+    <table style="table-layout: fixed; width: 100%;">
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.StandComboImage01)" />
-                </div>
+            <th colspan="12" style="font-weight:bold">Combos</th>
+        </tr>
+        <tr>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.StandComboImage01)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.StandCombo01)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.StandCombo01)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.StandComboImage02)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.StandComboImage02)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.StandCombo02)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.StandCombo02)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.WalkingComboImage01)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.WalkingComboImage01)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.WalkingCombo01)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.WalkingCombo01)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.WalkingComboImage02)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.WalkingComboImage02)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.WalkingCombo02)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.WalkingCombo02)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.RunningComboImage01)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.RunningComboImage01)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.RunningCombo01)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.RunningCombo01)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.RunningComboImage02)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.RunningComboImage02)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.RunningCombo02)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.RunningCombo02)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.JumpComboImage01)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.JumpComboImage01)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.JumpCombo01)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.JumpCombo01)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.JumpComboImage02)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.JumpComboImage02)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.JumpCombo02)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.JumpCombo02)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.RunningJumpComboImage01)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.RunningJumpComboImage01)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.RunningJumpCombo01)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.RunningJumpCombo01)
             </td>
         </tr>
         <tr>
-            <th>
-                <div class="col-7" style="font-weight:bold">
-                    <img src="@Html.DisplayFor(model => model.RunningJumpComboImage02)" />
-                </div>
+            <th colspan="6">
+                <img src="@Html.DisplayFor(model => model.RunningJumpComboImage02)" width="100%" />
             </th>
-            <td>
-                <div class="col-5">
-                    @Html.DisplayFor(model => model.RunningJumpCombo02)
-                </div>
+            <td colspan="6">
+                @Html.DisplayFor(model => model.RunningJumpCombo02)
             </td>
         </tr>
     </table>
     <br />
-    <table>
+    <table style="table-layout: fixed; width: 100%;">
         <tr>
             <th colspan="12" style="font-weight:bold">Skills</th>
         </tr>
         <tr>
-            <td style="text-align:center" ; colspan="2">
+            <td style="text-align:center" colspan="2">
                 <img src="@Html.DisplayFor(model => model.SkillImage01)" />
             </td>
-            <td style="text-align:center" ; colspan="2">
+            <td style="text-align:center" colspan="2">
                 <img src="@Html.DisplayFor(model => model.SkillImage02)" />
             </td>
-            <td style="text-align:center" ; colspan="2">
+            <td style="text-align:center" colspan="2">
                 <img src="@Html.DisplayFor(model => model.SkillImage03)" />
             </td>
-            <td style="text-align:center" ; colspan="2">
+            <td style="text-align:center" colspan="2">
                 <img src="@Html.DisplayFor(model => model.SkillImage04)" />
             </td>
-            <td style="text-align:center" ; colspan="2">
+            <td style="text-align:center" colspan="2">
                 <img src="@Html.DisplayFor(model => model.SkillImage05)" />
             </td>
-            <td style="text-align:center" ; colspan="2">
+            <td style="text-align:center" colspan="2">
                 <img src="@Html.DisplayFor(model => model.SkillImage06)" />
             </td>
         </tr>
@@ -427,23 +389,23 @@
     <br />
     <table>
         <tr>
-            <td style="text-align:center"; colspan="1">
+            <td style="text-align:center" ; colspan="1">
                 <img src="@Html.DisplayFor(model => model.SpecialImage01)" />
                 <br />
                 @Html.DisplayFor(model => model.Special01)
             </td>
-           <td colspan="11">
-                 @Html.DisplayFor(model => model.SpecialDesc01)
+            <td colspan="11">
+                @Html.DisplayFor(model => model.SpecialDesc01)
             </td>
-        </tr> 
+        </tr>
         <tr>
-            <td style="text-align:center"; colspan="1">
+            <td style="text-align:center" ; colspan="1">
                 <img src="@Html.DisplayFor(model => model.SpecialImage02)" />
                 <br />
                 @Html.DisplayFor(model => model.Special02)
             </td>
-           <td colspan="11">
-                 @Html.DisplayFor(model => model.SpecialDesc02)
+            <td colspan="11">
+                @Html.DisplayFor(model => model.SpecialDesc02)
             </td>
         </tr>
     </table>

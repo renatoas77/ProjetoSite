@@ -312,8 +312,9 @@ svg {
 }
 
 table {
-  caption-side: bottom;
-  border-collapse: collapse;
+    table-layout: fixed;
+    caption-side: bottom;
+    border-collapse: collapse;
 }
 
 caption {
