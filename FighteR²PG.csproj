@@ -11,8 +11,6 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Migrations\" />
-    <Folder Include="Views\Characters\" />
-    <Folder Include="Views\Bosses\" />
   </ItemGroup>
 
   <ItemGroup>

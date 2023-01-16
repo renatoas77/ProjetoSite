@@ -1,4 +1,6 @@
-﻿@{
+﻿@model FighteR_PG.ViewModels.BossCharacterViewModel
+
+@{
     ViewData["Title"] = "FighteR²PG Wiki";
 }
 <main id="content">
@@ -216,9 +218,14 @@
                                 </tr>
                                 <tr>
                                     <td style="padding: 0.2em 0.5em; background-color: #353535;">
-                                        @for (int i = 0; i < 30; i++)
+                                        @foreach (var item in Model.characters)
                                         {
-                                            <span style="text-align:center; float:left; margin-top: 5px; margin-right: 5px;"><div><a href="https://wiki.supercombo.gg/w/Street_Fighter_V/Akira" title="Akira"><img alt="Akira" src="~/images/ThumbTeste.jpg" width="80" height="80"></a></div><div style="line-height:1; text-align:center; font-size:1.0em; width:70px; height:2.2em; margin:auto"><a href="https://wiki.supercombo.gg/w/Street_Fighter_V/Akira" title="Street Fighter V/Akira"> Akira</a></div></span>
+                                            <span style="text-align:center; float:left; margin-top: 5px; margin-right: 5px;">
+                                                <a asp-controller="Character" asp-action="Details" asp-route-id="@item.CharacterId"><img src="@Html.DisplayFor(modelItem => item.Icon)" width="80" height="80"></a>
+                                                <div style="line-height:1; text-align:center; font-size:1.0em; width:70px; height:2.2em; margin:auto">
+                                                    <a asp-controller="Character" asp-action="Details" asp-route-id="@item.CharacterId">  @Html.DisplayFor(modelItem => item.Name)</a>
+                                                </div>
+                                            </span>
                                         }
                                     </td>
                                 </tr>
@@ -235,9 +242,14 @@
                                 </tr>
                                 <tr>
                                     <td style="padding: 0.2em 0.5em; background-color: #353535;">
-                                        @for (int i = 0; i < 30; i++)
+                                        @foreach (var item in Model.bosses)
                                         {
-                                            <span style="text-align:center; float:left; margin-top: 5px; margin-right: 5px;"><div><a href="https://wiki.supercombo.gg/w/Street_Fighter_V/Akira" title="Akira"><img alt="Akira" src="~/images/ThumbTeste.jpg" width="80" height="80"></a></div><div style="line-height:1; text-align:center; font-size:1.0em; width:70px; height:2.2em; margin:auto"><a href="https://wiki.supercombo.gg/w/Street_Fighter_V/Akira" title="Street Fighter V/Akira"> Akira</a></div></span>
+                                            <span style="text-align:center; float:left; margin-top: 5px; margin-right: 5px;">
+                                                <a asp-controller="Boss" asp-action="Details" asp-route-id="@item.BossId"><img src="@Html.DisplayFor(modelItem => item.Image)" width="80" height="80"></a>
+                                                <div style="line-height:1; text-align:center; font-size:1.0em; width:70px; height:2.2em; margin:auto">
+                                                    <a asp-controller="Boss" asp-action="Details" asp-route-id="@item.BossId">  @Html.DisplayFor(modelItem => item.Name)</a>
+                                                </div>
+                                            </span>
                                         }
                                     </td>
                                 </tr>

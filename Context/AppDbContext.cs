@@ -13,7 +13,7 @@ namespace FighteR_PG.Context
         public DbSet <Boss> Bosses { get; set; }
         public DbSet <Sex> Sexes { get; set; }
         public DbSet <Archetype> Archetypes { get; set; }
-        public DbSet<FighteR_PG.Models.Tier> Tier { get; set; }
+        public DbSet <Tier> Tier { get; set; }
 
     }
 }

@@ -1,10 +1,10 @@
 ﻿@model FighteR_PG.Models.Tier
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Criar ";
 }
 
-<h1>Create</h1>
+<h1>Criar</h1>
 
 <h4>Tier</h4>
 <hr />
@@ -17,15 +17,13 @@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
+            <br />
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Criar" class="btn btn-primary" />
+                 <a asp-action="Index" class="btn btn-secondary" >Voltar</a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

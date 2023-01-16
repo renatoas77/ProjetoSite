@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<FighteR_PG.Models.Tier>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Tier ";
 }
 
-<h1>Index</h1>
+<h1>Tier</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Criar</a>
 </p>
 <table class="table">
     <thead>
@@ -25,11 +25,16 @@
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.TierId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.TierId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.TierId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.TierId" class="btn btn-warning">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.TierId" class="btn btn-info">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.TierId" class="btn btn-danger">Delete</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+ <p>
+    <a asp-action="Create" class="btn btn-primary">Criar</a>
+    <a asp-area="admin" asp-controller="AdminHome" asp-action="Index" class="btn btn-secondary">Voltar</a>
+</p>

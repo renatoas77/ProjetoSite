@@ -1,21 +1,34 @@
 ﻿using FighteR_PG.Models;
+using FighteR_PG.Context;
+using FighteR_PG.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using Microsoft.EntityFrameworkCore;
+using FighteR_PG.Repositories.IRepositories;
 
 namespace FighteR_PG.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ICharacterRepository _characterRepository;
+        private readonly IBossRepository _bossRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ICharacterRepository characterRepository, IBossRepository bossRepository)
         {
             _logger = logger;
+            _characterRepository = characterRepository;
+            _bossRepository = bossRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            BossCharacterViewModel var = new BossCharacterViewModel();
+
+            var.bosses = _bossRepository.Bosses;
+            var.characters = _characterRepository.Characters;
+
+            return View(var);
         }
 
         public IActionResult Privacy()

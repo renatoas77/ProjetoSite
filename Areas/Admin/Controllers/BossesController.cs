@@ -69,7 +69,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["SexId"] = new SelectList(_context.Sexes, "SexId", "SexCharacter", boss.SexId);
-            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name");
+            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name",boss.TierId);
             return View(boss);
         }
 
@@ -87,7 +87,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
                 return NotFound();
             }
             ViewData["SexId"] = new SelectList(_context.Sexes, "SexId", "SexCharacter", boss.SexId);
-            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name");
+            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name", boss.TierId);
             return View(boss);
         }
 
@@ -124,7 +124,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["SexId"] = new SelectList(_context.Sexes, "SexId", "SexCharacter", boss.SexId);
-            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name");
+            ViewData["TierId"] = new SelectList(_context.Tier, "TierId", "Name", boss.TierId);
             return View(boss);
         }
 

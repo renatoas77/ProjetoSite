@@ -1,14 +1,11 @@
 ﻿@model IEnumerable<FighteR_PG.Models.Sex>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Sexos ";
 }
 
-<h1>Index</h1>
+<h1>Sexos</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
@@ -25,11 +22,16 @@
                 @Html.DisplayFor(modelItem => item.SexCharacter)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.SexId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.SexId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.SexId">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.SexId" class="btn btn-warning">Editar</a> 
+                <a asp-action="Details" asp-route-id="@item.SexId" class="btn btn-info">Detalhes</a> 
+                <a asp-action="Delete" asp-route-id="@item.SexId" class="btn btn-danger">Deletar</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+ <p>
+    <a asp-action="Create" class="btn btn-primary">Criar novo</a>
+    <a asp-area="admin" asp-controller="AdminHome" asp-action="Index" class="btn btn-secondary">Voltar</a>
+</p>
