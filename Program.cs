@@ -13,6 +13,11 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 builder.Services.AddTransient<ICharacterRepository, CharacterRepository>();
 builder.Services.AddTransient<IBossRepository, BossRepository>();
 
+builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddMemoryCache();
+
+builder.Services.AddSession();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

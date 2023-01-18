@@ -255,11 +255,11 @@ namespace FighteR_PG.Models
 
        
         [Display(Name = "Descrição do especial")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(200, ErrorMessage = "Maximo de {1} caracteres")]
         public string SpecialDesc01 { get; set; }
 
         [Display(Name = "Descrição do especial")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(200, ErrorMessage = "Maximo de {1} caracteres")]
         public string SpecialDesc02 { get; set; }
 
       
@@ -387,5 +387,6 @@ namespace FighteR_PG.Models
         public int SexId { get; set; }
         [Display(Name = "Sexo")]
         public virtual Sex Sex { get; set; }
+
     }
 }

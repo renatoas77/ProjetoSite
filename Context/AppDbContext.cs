@@ -14,6 +14,8 @@ namespace FighteR_PG.Context
         public DbSet <Sex> Sexes { get; set; }
         public DbSet <Archetype> Archetypes { get; set; }
         public DbSet <Tier> Tier { get; set; }
-
+        public DbSet <SelectedMembers> SelectedMembers { get; set; }
+        public DbSet <Team> Team { get; set; }
+        public DbSet <TeamMember> TeamMembers { get; set; }
     }
 }
