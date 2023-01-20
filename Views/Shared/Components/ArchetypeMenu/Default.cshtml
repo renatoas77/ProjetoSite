@@ -1,0 +1,19 @@
+﻿<div class="dropdown-center">
+    <a class="btn btn-secondary dropdown-toggle" role="button"
+       id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+        Arquetipos
+    </a>
+
+    <ul class="dropdown-menu">
+        @foreach(var arquetipo in Model)
+        {
+            <li>
+                <a class="dropdown-item" asp-controller="Character" asp-action="List" asp-route-arquetipo="@arquetipo.Name">@arquetipo.Name</a>
+            </li>
+        }
+        <li class="dropdown-divider"></li>
+        <li>
+            <a class="dropdown-item" asp-controller="Character" asp-action="List" asp-route-arquetipo="">Todos os Arquetipos</a>
+        </li>
+    </ul>
+</div>

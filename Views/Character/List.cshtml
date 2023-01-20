@@ -1,0 +1,18 @@
+﻿@model FighteR_PG.ViewModels.CharactersViewModel;
+
+@{
+    ViewData["Title"] = "Personagens";
+}
+
+<div>
+    <h1>@Model.Arquetipo</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        @foreach (var character in Model.Characters)
+        {
+           <partial name="_CharacterList" for="@character"/>
+        }
+    </div>
+</div>

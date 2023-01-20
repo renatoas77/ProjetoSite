@@ -37,7 +37,7 @@ namespace FighteR_PG.Models
 
             if (SelectedMember == null)
             {
-                if (TeamMembers.Count > 3)
+                if (TeamMembers.Count < 3)
                 {
                     SelectedMember = new SelectedMembers
                     {

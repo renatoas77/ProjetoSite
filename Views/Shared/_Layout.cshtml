@@ -43,6 +43,16 @@
                         </li>
                     </ul>
                 </div>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    &nbsp;    &nbsp; &nbsp;    &nbsp; &nbsp;    &nbsp;  &nbsp;    &nbsp;  &nbsp;    &nbsp;
+                    @await Component.InvokeAsync("ArchetypeMenu")
+                    &nbsp;    &nbsp;
+                    <form class="navbar-form navbar-right" asp-controller="Lanche" asp-action="Search" method="get">
+                        <div>
+                            <input type="text" class="form-control" placeholder="Procurar produto" name="searchString" value="@ViewData["searchString"]">
+                        </div>
+                    </form>
+                </div>
             </div>
         </nav>
     </header>

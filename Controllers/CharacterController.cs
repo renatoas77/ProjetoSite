@@ -1,5 +1,6 @@
-﻿using FighteR_PG.Context;
+﻿using FighteR_PG.Models;
 using FighteR_PG.Repositories.IRepositories;
+using FighteR_PG.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,6 +30,42 @@ namespace FighteR_PG.Controllers
             }
 
             return View(character);
+        }
+
+        public IActionResult List(string arquetipo)
+        {
+            IEnumerable<Character> characters;
+            string Arquetipo = string.Empty;
+
+            if (string.IsNullOrEmpty(arquetipo))
+            {
+                characters = _characterRepository.Characters.OrderBy(l => l.CharacterId);
+                Arquetipo = "Todos personagens";
+            }
+            else
+            {
+                characters = _characterRepository.Characters
+                    .Where(c => c.Archetype.Name == arquetipo)
+                    .OrderBy(c => c.Name);
+
+                if (characters.Any())
+                {
+                    Arquetipo = arquetipo;
+                }
+                else
+                {
+                    Arquetipo = "URL inválida cabaço";
+                }
+
+            }
+
+            var characterViewModel = new CharactersViewModel
+            {
+                Characters = characters,
+                Arquetipo = Arquetipo,
+            };
+
+            return View(characterViewModel);
         }
     }
 }

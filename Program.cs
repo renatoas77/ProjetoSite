@@ -1,4 +1,5 @@
 using FighteR_PG.Context;
+using FighteR_PG.Models;
 using FighteR_PG.Repositories.IRepositories;
 using FighteR_PG.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -12,11 +13,14 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 
 builder.Services.AddTransient<ICharacterRepository, CharacterRepository>();
 builder.Services.AddTransient<IBossRepository, BossRepository>();
+builder.Services.AddTransient<IArchetypesRepository, ArchetypesRepository>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddMemoryCache();
 
 builder.Services.AddSession();
+
+builder.Services.AddScoped(sp => Selection.GetSelection(sp));
 
 var app = builder.Build();
 
@@ -39,8 +43,13 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllerRoute(
       name: "areas",
-      pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+      pattern: "{area:exists}/{controller=AdminHome}/{action=Index}/{id?}"
     );
+
+    endpoints.MapControllerRoute(
+      name: "arquetypesFilter",
+      pattern: "Character/{action}/{arquetipo?}",
+      defaults: new { Controller = "Character", action = "List" });
 
     endpoints.MapControllerRoute(
     name: "default",

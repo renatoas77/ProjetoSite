@@ -4,6 +4,7 @@ namespace FighteR_PG.ViewModels
 {
     public class CharactersViewModel
     {
-        IEnumerable<Character> Characters { get; }
+        public IEnumerable<Character> Characters { get; set; }
+        public string Arquetipo { get; set; }
     }
 }
