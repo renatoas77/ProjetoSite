@@ -1,5 +1,12 @@
 ﻿@model FighteR_PG.Models.Character;
 
-<div>
-    <img src="@Model.Image"/>
-</div>
+
+<span style="text-align:center; float:left; margin-top: 5px; margin-right: 5px;">
+    <a asp-controller="Character" asp-action="Details" asp-route-id="@Model.CharacterId"><img src="@Model.Icon" width="80" height="80"></a>
+    <div style="line-height:1; text-align:center; font-size:1.0em; width:70px; height:2.2em; margin:auto">
+        <a asp-controller="Character" asp-action="Details" asp-route-id="@Model.CharacterId">  @Model.Name</a>
+    </div>
+    <div class="buttons">
+        <a asp-controller="Selection" asp-action="SelecionarMembro" asp-route-id="@Model.CharacterId" class="btn btn-outline-primary">Selecionar</a>
+    </div>
+</span>

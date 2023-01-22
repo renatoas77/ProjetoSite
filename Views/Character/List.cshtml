@@ -4,15 +4,22 @@
     ViewData["Title"] = "Personagens";
 }
 
-<div>
-    <h1>@Model.Arquetipo</h1>
-</div>
-
-<div class="container">
-    <div class="row">
-        @foreach (var character in Model.Characters)
-        {
-           <partial name="_CharacterList" for="@character"/>
+<table style="clear: both; width: 100%; margin: auto; border: 1px solid #353535; margin-top:0.5em;">
+    <tbody>
+        <tr>
+            <td style="text-align:left; font-size: 15px; font-weight:700">
+               <h1>@Model.Arquetipo</h1>
+            </td>
+        </tr>
+        @if(Model.Characters.Any()){
+        <tr>
+            <td style="padding: 0.2em 0.5em; background-color: #353535;">
+                @foreach (var character in Model.Characters)
+                {
+                    <partial name="_CharacterList" for="@character" />
+                }
+            </td>
+        </tr>
         }
-    </div>
-</div>
+    </tbody>
+</table>

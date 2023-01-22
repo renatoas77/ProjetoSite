@@ -67,5 +67,39 @@ namespace FighteR_PG.Controllers
 
             return View(characterViewModel);
         }
+
+        public ViewResult Search(string searchString)
+        {
+
+            IEnumerable<Character> characters;
+            string SearchString = string.Empty;
+
+            if (string.IsNullOrEmpty(searchString))
+            {
+                characters = _characterRepository.Characters.OrderBy(l => l.CharacterId);
+                SearchString = "Todos personagens";
+            }
+            else
+            {
+                characters = _characterRepository.Characters
+                    .Where(c => c.Name.ToLower().Contains(searchString.ToLower()))
+                    .OrderBy(c => c.CharacterId);
+
+                if (characters.Any())
+                {
+                    SearchString = "Personagens";
+                }
+                else
+                {
+                    SearchString = "Sem resultados";
+                }
+            }
+
+            return View("~/Views/Character/List.cshtml", new CharactersViewModel
+            {
+                Characters = characters,
+                Arquetipo = SearchString,
+            });
+        }
     }
 }

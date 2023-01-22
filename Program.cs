@@ -16,11 +16,11 @@ builder.Services.AddTransient<IBossRepository, BossRepository>();
 builder.Services.AddTransient<IArchetypesRepository, ArchetypesRepository>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-builder.Services.AddMemoryCache();
+builder.Services.AddScoped(sp => Selection.GetSelection(sp));
 
+builder.Services.AddMemoryCache();
 builder.Services.AddSession();
 
-builder.Services.AddScoped(sp => Selection.GetSelection(sp));
 
 var app = builder.Build();
 
@@ -36,6 +36,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 

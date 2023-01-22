@@ -147,7 +147,7 @@
             @Html.DisplayNameFor(model => model.Archetype)
         </div>
         <div class="col-11">
-            @Html.DisplayFor(model => model.Archetype.Name)
+           <a asp-controller="Archetypes" asp-action="Index">@Html.DisplayFor(model => model.Archetype.Name)</a> 
         </div>
     </div>
     <div class="row">
