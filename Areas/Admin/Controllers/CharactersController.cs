@@ -23,7 +23,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
         // GET: Admin/Characters
         public async Task<IActionResult> Index()
         {
-            var appDbContext = _context.Characters.Include(c => c.Archetype).Include(c => c.Sex);
+            var appDbContext = _context.Characters.Include(c => c.Archetype).Include(c => c.Sex).OrderBy(c => c.CharacterId);
             return View(await appDbContext.ToListAsync());
         }
 

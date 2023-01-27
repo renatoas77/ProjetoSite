@@ -48,7 +48,7 @@ namespace FighteR_PG.Models
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Idade")]
-        [Range(16, 1000, ErrorMessage = "A idade deve estar entre 16 e 1000")]
+        [Range(0, 1000, ErrorMessage = "A idade deve estar entre 16 e 1000")]
         public int Age { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
@@ -277,13 +277,13 @@ namespace FighteR_PG.Models
         public string Fury { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
-        [Display(Name = "Golpe 1")]
-        [MaxLength(20, ErrorMessage = "Maximo de {1} caracteres")]
+        [Display(Name = "Golpe 01")]
+        [MaxLength(60, ErrorMessage = "Maximo de {1} caracteres")]
         public string Hit01 { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
-        [Display(Name = "Golpe 2")]
-        [MaxLength(20, ErrorMessage = "Maximo de {1} caracteres")]
+        [Display(Name = "Golpe 02")]
+        [MaxLength(60, ErrorMessage = "Maximo de {1} caracteres")]
         public string Hit02 { get; set; }
 
        
