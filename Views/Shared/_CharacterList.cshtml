@@ -7,6 +7,6 @@
         <a asp-controller="Character" asp-action="Details" asp-route-id="@Model.CharacterId">  @Model.Name</a>
     </div>
     <div class="buttons">
-        <a asp-controller="Selection" asp-action="SelecionarMembro" asp-route-id="@Model.CharacterId" class="btn btn-outline-primary">Selecionar</a>
+        <a asp-controller="Selection" asp-action="SelecionarMembro" asp-route-CharacterId="@Model.CharacterId" class="btn btn-outline-primary">Selecionar</a>
     </div>
 </span>

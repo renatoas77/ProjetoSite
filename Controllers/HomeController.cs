@@ -25,8 +25,8 @@ namespace FighteR_PG.Controllers
         {
             BossCharacterViewModel var = new BossCharacterViewModel();
 
-            var.bosses = _bossRepository.Bosses;
-            var.characters = _characterRepository.Characters;
+            var.bosses = _bossRepository.Bosses.OrderBy(b => b.BossId);
+            var.characters = _characterRepository.Characters.OrderBy(c => c.CharacterId);
 
             return View(var);
         }

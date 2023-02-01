@@ -1,3 +1,17 @@
 ﻿@model List<SelectedMembers>
 
-<h1>Membros selecionados</h1>
+<h1>Time</h1>
+
+ <table style="table-layout: fixed; width: 100%;">
+        <tr>
+            <th colspan="12" style="font-weight:bold">Membros selecionados</th>
+        </tr>
+        <tr>
+        @foreach (SelectedMembers member in Model)
+        {
+                            <td style="text-align:center" colspan="4">
+                                    <img src="@Html.DisplayFor(x => member.Character.Icon)" width="80" height="80"/>
+                            </td>
+        }
+        </tr>
+</table>

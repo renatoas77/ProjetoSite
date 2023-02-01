@@ -37,6 +37,8 @@ namespace FighteR_PG.Models
 
             if (SelectedMember == null)
             {
+                var TeamMembers = _context.SelectedMembers.Where(c => c.SelectionId == SelectionId).Include(c => c.Character).ToList();
+
                 if (TeamMembers.Count < 3)
                 {
                     SelectedMember = new SelectedMembers

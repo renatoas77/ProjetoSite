@@ -46,7 +46,7 @@ namespace FighteR_PG.Controllers
             {
                 characters = _characterRepository.Characters
                     .Where(c => c.Archetype.Name == arquetipo)
-                    .OrderBy(c => c.Name);
+                    .OrderBy(c => c.CharacterId);
 
                 if (characters.Any())
                 {

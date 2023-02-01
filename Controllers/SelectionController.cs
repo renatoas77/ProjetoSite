@@ -19,7 +19,7 @@ namespace FighteR_PG.Controllers
         {
                _selection.TeamMembers = _selection.GetSelectedMembers();
 
-          return View();
+          return View(_selection.TeamMembers);
         }
 
         public IActionResult SelecionarMembro(int CharacterId)
