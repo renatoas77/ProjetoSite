@@ -19,6 +19,11 @@ namespace FighteR_PG.Controllers
         {
                _selection.TeamMembers = _selection.GetSelectedMembers();
 
+            if(_selection.TeamMembers.Count < 1)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+
           return View(_selection.TeamMembers);
         }
 

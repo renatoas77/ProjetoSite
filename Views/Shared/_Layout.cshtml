@@ -33,13 +33,13 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-secondary" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link text-secondary" asp-area="Admin" asp-controller="AdminHome" asp-action="Index">Admin</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-secondary" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-secondary" asp-area="" asp-controller="Login" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-secondary" asp-area="" asp-controller="Login" asp-action="Register">Registrar</a>
                         </li>
                     </ul>
                 </div>
@@ -52,9 +52,12 @@
                             <input type="text" class="form-control" placeholder="Procurar personagem" name="searchString" value="@ViewData["searchString"]">
                         </div>
                     </form>
-                    &nbsp;    &nbsp; &nbsp;    &nbsp; &nbsp;    &nbsp;  &nbsp;    &nbsp;  &nbsp;    &nbsp;
-                   <a asp-controller="Character" asp-action="List" class="btn btn-primary">Criar time<img src="https://cdn-icons-png.flaticon.com/512/2057/2057748.png" width="25" height="25"/></a>
-                </div>
+                      &nbsp;    &nbsp; &nbsp;    
+                    @await Component.InvokeAsync("SelectionIcon")
+                    &nbsp;    &nbsp;
+                    <a asp-controller="Character" asp-action="List" class="btn btn-primary">Criar time<img src="https://cdn-icons-png.flaticon.com/512/2057/2057748.png" width="25" height="25"/></a>
+                    &nbsp;    &nbsp; &nbsp;  
+               </div>
             </div>
         </nav>
     </header>
