@@ -17,9 +17,12 @@ namespace FighteR_PG.Controllers
             _signInManager = signInManager;
         }
 
-        public IActionResult Login()
+        public IActionResult Login(string Page)
         {
-            return View();
+            return View(new LoginViewModel
+            {
+                Page = Page
+            });
         }
 
         [HttpPost]
@@ -53,6 +56,37 @@ namespace FighteR_PG.Controllers
         public IActionResult Register()
         {
             return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register([Bind("UserName,Password,ConfirmPassword")] RegisterViewModel RegisterVM)
+        {
+            if (ModelState.IsValid) 
+            {
+                var user = new User { UserName = RegisterVM.UserName };
+                var result = await _userManager.CreateAsync(user, RegisterVM.Password);
+
+                if (result.Succeeded)
+                {
+                    await _userManager.AddToRoleAsync(user, "User");
+                    return RedirectToAction("Login", "Login");
+                }
+                else
+                {
+                    this.ModelState.AddModelError("Registro", "Falha ao registrar o usuario");
+                }
+            }
+            return View(RegisterVM);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.Session.Clear();
+            HttpContext.User = null;
+            await _signInManager.SignOutAsync();
+            return RedirectToAction("Index", "Home");
         }
 
 

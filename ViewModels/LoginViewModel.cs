@@ -14,13 +14,6 @@ namespace FighteR_PG.ViewModels
         [Display(Name = "Senha")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-
-        [NotMapped] 
-        [Compare("Password")]
-        [Display(Name = "Confirme a senha")]
-        [DataType(DataType.Password)]
-        public string ConfirmPassword { get; set; }
-
         public string Page { get; set; }
     }
 }
