@@ -14,6 +14,7 @@
                 <hr />
                 <form asp-controller="Login" asp-action="Login" method="post" class="col-md-12" style="text-align:center">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Page" />
                     <div class="form-group">
                         <label asp-for="UserName" class="control-label"></label>
                         <input asp-for="UserName" class="form-control" />

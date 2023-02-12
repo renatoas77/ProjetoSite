@@ -27,7 +27,7 @@ namespace FighteR_PG.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login([Bind("UserName,Password")] LoginViewModel LoginVM)
+        public async Task<IActionResult> Login([Bind("UserName,Password,Page")] LoginViewModel LoginVM)
         {
             if (!ModelState.IsValid)
             {
@@ -74,7 +74,7 @@ namespace FighteR_PG.Controllers
                 }
                 else
                 {
-                    this.ModelState.AddModelError("Registro", "Falha ao registrar o usuario");
+                    this.ModelState.AddModelError("", "Falha ao registrar o usuario");
                 }
             }
             return View(RegisterVM);

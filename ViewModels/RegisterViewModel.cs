@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Policy;
+using Newtonsoft.Json.Serialization;
 
 namespace FighteR_PG.ViewModels
 {
@@ -16,7 +17,7 @@ namespace FighteR_PG.ViewModels
         public string Password { get; set; }
 
         [NotMapped]
-        [Compare("Password")]
+        [Compare("Password",ErrorMessage = "Senhas não são iguais")]
         [Display(Name = "Confirme a senha")]
         [DataType(DataType.Password)]
         public string ConfirmPassword { get; set; }
