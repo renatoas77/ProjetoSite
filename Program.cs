@@ -1,9 +1,11 @@
-    using FighteR_PG.Context;
+using FighteR_PG.Context;
 using FighteR_PG.Models;
 using FighteR_PG.Repositories.IRepositories;
 using FighteR_PG.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+using FighteR_PG.Services.IServices;
+using FighteR_PG.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,6 +31,7 @@ builder.Services.Configure<IdentityOptions>(options =>
 builder.Services.AddTransient<ICharacterRepository, CharacterRepository>();
 builder.Services.AddTransient<IBossRepository, BossRepository>();
 builder.Services.AddTransient<IArchetypesRepository, ArchetypesRepository>();
+builder.Services.AddScoped<ISeedRoleUser, SeedRoleUser>();
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped(sp => Selection.GetSelection(sp));
@@ -38,6 +41,15 @@ builder.Services.AddSession();
 
 
 var app = builder.Build();
+
+using(var serviceScope = app.Services.CreateScope())
+{
+    var services = serviceScope.ServiceProvider;
+
+    var myService = services.GetRequiredService<ISeedRoleUser>();
+    myService.SeedRoles();
+    myService.SeedUsers();
+}
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
