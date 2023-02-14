@@ -11,7 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddDbContext<AppDbContext>(options => 
+builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddIdentity<User, IdentityRole>()
@@ -19,7 +19,7 @@ builder.Services.AddIdentity<User, IdentityRole>()
                 .AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(options =>
-{   
+{
     options.Password.RequireDigit = false;
     options.Password.RequireLowercase = false;
     options.Password.RequireNonAlphanumeric = false;
@@ -32,6 +32,15 @@ builder.Services.AddTransient<ICharacterRepository, CharacterRepository>();
 builder.Services.AddTransient<IBossRepository, BossRepository>();
 builder.Services.AddTransient<IArchetypesRepository, ArchetypesRepository>();
 builder.Services.AddScoped<ISeedRoleUser, SeedRoleUser>();
+
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", politica =>
+    {
+        politica.RequireRole("Admin");
+    });
+
+});
 
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped(sp => Selection.GetSelection(sp));
@@ -52,7 +61,7 @@ using(var serviceScope = app.Services.CreateScope())
 }
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if(!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.

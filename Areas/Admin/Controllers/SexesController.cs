@@ -7,10 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FighteR_PG.Context;
 using FighteR_PG.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FighteR_PG.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize("Admin")]
     public class SexesController : Controller
     {
         private readonly AppDbContext _context;
