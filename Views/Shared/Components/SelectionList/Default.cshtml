@@ -1,0 +1,14 @@
+﻿@model List<SelectedMembers>
+
+ <tr>
+    @foreach(SelectedMembers member in Model)
+    {
+                    <td style="text-align:center" colspan="4">
+                            <a asp-controller="Character" asp-action="Details" asp-route-Id="@member.Character.CharacterId"><img src="@Html.DisplayFor(x => member.Character.Icon)" width="80" height="80"/></a>
+                            <br/>
+                            <a asp-controller="Character" asp-action="Details" asp-route-Id="@member.Character.CharacterId">@member.Character.Name</a>
+                            <br/>
+                            <a asp-controller="Selection" asp-action="RemoverMembro" asp-route-CharacterId="@member.Character.CharacterId" class="btn btn-danger">Remover</a>
+                    </td>
+    }
+ </tr>

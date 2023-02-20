@@ -36,6 +36,10 @@ namespace FighteR_PG.Controllers
             {
                 _selection.AddToSelection(character);
             }
+            if(_selection.GetSelectedMembers().Count < 3)
+            { 
+                return RedirectToAction("List","Character");
+            }
             return RedirectToAction("Index");
         }
 

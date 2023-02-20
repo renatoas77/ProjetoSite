@@ -11,6 +11,8 @@
     <Folder Include="Areas\Admin\Data\" />
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Migrations\" />
+    <Folder Include="wwwroot\images\Personagens\02\" />
+    <Folder Include="wwwroot\images\Personagens\01\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,23 @@
+﻿@model Team
+
+<h1>Time</h1>
+
+ <table style="table-layout: fixed; width: 100%;">
+        <tr>
+            <th colspan="12" style="font-weight:bold">Membros selecionados</th>
+        </tr>
+        <tr>
+        @await Component.InvokeAsync("SelectionList")
+</table>
+<form asp-controller="Team" asp-action="Salvar">
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Salvar Time" class="btn btn-primary" />
+                <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Voltar</a>
+            </div>
+</form>

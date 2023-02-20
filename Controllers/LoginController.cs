@@ -19,10 +19,15 @@ namespace FighteR_PG.Controllers
 
         public IActionResult Login(string Page)
         {
+            if(_signInManager.IsSignedIn(User))
+            {
+              return RedirectToAction("Index","Home");
+            }
             return View(new LoginViewModel
             {
                 Page = Page
             });
+
         }
 
         [HttpPost]
