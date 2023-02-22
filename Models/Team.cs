@@ -13,7 +13,7 @@ namespace FighteR_PG.Models
 
         public List<TeamMember> Members { get; set; }
 
-        public string Id;
+        public string UserId { get; set; }
         public virtual User User { get; set; }
     }
 }

@@ -1,11 +1,8 @@
 ﻿using FighteR_PG.Context;
 using FighteR_PG.Models;
-using FighteR_PG.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml.Linq;
 
 namespace FighteR_PG.Controllers
 {
@@ -22,6 +19,18 @@ namespace FighteR_PG.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            var user = await _userManager.FindByNameAsync(User.Identity.Name);
+
+            var teams = await _context.Team.Where(t => t.UserId == _userManager.GetUserId(User))
+                                           .Include(m => m.Members)
+                                           .ThenInclude(c => c.Character)
+                                           .ToListAsync();
+
+            return View(teams);
         }
 
         public IActionResult Salvar()

@@ -329,54 +329,54 @@ namespace FighteR_PG.Models
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo parado")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string StandCombo01 { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo parado")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string StandCombo02 { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo andando")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string WalkingCombo01 { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo andando")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string WalkingCombo02 { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo correndo")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string RunningCombo01 { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo correndo")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string RunningCombo02 { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo pulando")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string JumpCombo01 { get; set; }
 
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo pulando")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string JumpCombo02 { get; set; }
 
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo pulando enquanto corre")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string RunningJumpCombo01 { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Combo pulando enquanto corre")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
+        [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string RunningJumpCombo02 { get; set; }
 
         [Display(Name = "Arquetipo")]
