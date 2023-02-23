@@ -10,17 +10,19 @@
                 <th colspan="12" style="font-weight:bold">@team.Name</th>
             </tr>
             <tr>
-                @foreach (var member in Model.SelectMany(x => x.Members))
+                @for(int i = 0; i < team.Members.Count();i++)
                 {
-                                        <td style="text-align:center" colspan="4">
-                                                <a asp-controller="Character" asp-action="Details" asp-route-Id="@member.Character.CharacterId"><img src="@Html.DisplayFor(x => member.Character.Icon)" width="80" height="80"/></a>
-                                                <br/>
-                                                <a asp-controller="Character" asp-action="Details" asp-route-Id="@member.Character.CharacterId">@member.Character.Name</a>
-                                                <br/>
-                                                <a asp-controller="Selection" asp-action="RemoverMembro" asp-route-CharacterId="@member.Character.CharacterId" class="btn btn-danger">Remover</a>
-                                        </td>
+                        <td style="text-align:center" colspan="4">
+                                <a asp-controller="Character" asp-action="Details" asp-route-Id="@team.Members[i].Character.CharacterId"><img src="@Html.DisplayFor(x => team.Members[i].Character.Icon)" width="80" height="80"/></a>
+                                <br/>
+                                <a asp-controller="Character" asp-action="Details" asp-route-Id="@team.Members[i].Character.CharacterId">@team.Members[i].Character.Name</a>
+                        </td>
                 }
+                     
             </tr>
+                    <tr><td style="text-align:center" colspan="12"><a asp-controller="Team" asp-action="Delete" asp-route-id="@team.TeamId" class="btn btn-danger">Deletar</a></td>
+            </tr>
+            <tr> <td colspan="12"><br></td></tr>
         }
     </table>
 </div>

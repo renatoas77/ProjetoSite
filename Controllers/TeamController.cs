@@ -73,5 +73,42 @@ namespace FighteR_PG.Controllers
             }
             return View(team);
         }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if(id == null || _context.Team == null)
+            {
+                return NotFound();
+            }
+
+            var team = await _context.Team
+                .Include(m => m.Members)
+                .ThenInclude(c => c.Character)
+                .FirstOrDefaultAsync(m => m.TeamId == id);
+            if(team == null)
+            {
+                return NotFound();
+            }
+
+            return View(team);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            if(_context.Team == null)
+            {
+                return Problem("Entity set 'AppDbContext.Characters'  is null.");
+            }
+            var team = await _context.Team.FindAsync(id);
+            if(team != null)
+            {
+                _context.Team.Remove(team);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
     }
 }
