@@ -1,5 +1,6 @@
 ﻿using FighteR_PG.Context;
 using FighteR_PG.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -33,14 +34,12 @@ namespace FighteR_PG.Controllers
             return View(teams);
         }
 
+        [Authorize]
         public IActionResult Salvar()
         {
             if(_signInManager.IsSignedIn(User) && _selection.GetSelectedMembers().Count() == 3)
             {
-  
-               
-
-                return View();
+                 return View();
             }
 
            return RedirectToAction("Login","Login");

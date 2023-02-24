@@ -2,7 +2,6 @@
 using FighteR_PG.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace FighteR_PG.Controllers
 {
