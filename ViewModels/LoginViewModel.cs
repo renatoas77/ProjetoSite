@@ -14,6 +14,6 @@ namespace FighteR_PG.ViewModels
         [Display(Name = "Senha")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        public string Page { get; set; }
+        public string ReturnUrl { get; set; }
     }
 }

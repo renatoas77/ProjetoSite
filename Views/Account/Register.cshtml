@@ -1,0 +1,40 @@
+﻿@model FighteR_PG.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register ";
+}
+
+<div class="row">
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/1010/1010045.png" width="300" height="300" />
+                <h1 style="text-align:center">Registrar</h1>
+                <hr />
+                <form asp-controller="Account" asp-action="Register" class="col-md-12" style="text-align:center">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="UserName" class="control-label"></label>
+                        <input asp-for="UserName" class="form-control" />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                        <br/>
+                        <label asp-for="Password" class="control-label"></label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                        <br/>
+                        <label asp-for="ConfirmPassword" class="control-label"></label>
+                        <input asp-for="ConfirmPassword" class="form-control" />
+                        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        <input type="submit" value="Registrar" class="btn btn-primary" />
+                        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">Voltar</a>
+                    </div>
+                </form>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+</div>

@@ -16,7 +16,7 @@ namespace FighteR_PG.Controllers
             _signInManager = signInManager;
         }
 
-        public IActionResult Login(string Page)
+        public IActionResult Login(string ReturnUrl)
         {
             if(_signInManager.IsSignedIn(User))
             {
@@ -24,14 +24,14 @@ namespace FighteR_PG.Controllers
             }
             return View(new LoginViewModel
             {
-                Page = Page
+                ReturnUrl = ReturnUrl
             });
 
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Login([Bind("UserName,Password,Page")] LoginViewModel LoginVM)
+        public async Task<IActionResult> Login([Bind("UserName,Password,ReturnUrl")] LoginViewModel LoginVM)
         {
             if(!ModelState.IsValid)
             {
@@ -45,11 +45,11 @@ namespace FighteR_PG.Controllers
                 var result = await _signInManager.PasswordSignInAsync(user, LoginVM.Password, false, false);
                 if(result.Succeeded)
                 {
-                    if(string.IsNullOrEmpty(LoginVM.Page))
+                    if(string.IsNullOrEmpty(LoginVM.ReturnUrl))
                     {
                         return RedirectToAction("Index", "Home");
                     }
-                    return Redirect(LoginVM.Page);
+                    return Redirect(LoginVM.ReturnUrl);
                 }
             }
 
@@ -59,6 +59,10 @@ namespace FighteR_PG.Controllers
 
         public IActionResult Register()
         {
+            if(_signInManager.IsSignedIn(User))
+            {
+                return RedirectToAction("Index", "Home");
+            }
             return View();
         }
 

@@ -22,6 +22,7 @@ namespace FighteR_PG.Controllers
             _context = context;
         }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
@@ -37,12 +38,7 @@ namespace FighteR_PG.Controllers
         [Authorize]
         public IActionResult Salvar()
         {
-            if(_signInManager.IsSignedIn(User) && _selection.GetSelectedMembers().Count() == 3)
-            {
-                 return View();
-            }
-
-           return RedirectToAction("Login","Login");
+             return View();         
         }
 
         [HttpPost]
