@@ -43,18 +43,18 @@ namespace FighteR_PG.Models
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Peso em Kg")]
-        [Range(10, 10000, ErrorMessage = "A altura deve estar entre 10Kg e 10000Kg")]
+        [Range(10, 10000, ErrorMessage = "O peso deve estar entre 10Kg e 10000Kg")]
         public int Weight { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Idade")]
-        [Range(0, 1000, ErrorMessage = "A idade deve estar entre 16 e 1000")]
+        [Range(16, 1000, ErrorMessage = "A idade deve estar entre {1} e {2}")]
         public int Age { get; set; }
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Gosta de")]
-        [MaxLength(100, ErrorMessage = "Maximo de {1} caracteres")]
-        public string Likes { get; set; }
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Deve ter entre {2} e {1} caracteres")]
+        public string Likes { get; set; } 
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
         [Display(Name = "Não gosta de")]

@@ -23,7 +23,7 @@ namespace FighteR_PG.Models
 
 
         [Required(ErrorMessage = "Este campo não pode ficar em branco")]
-        [Display(Name = "Imagem daRegião")]
+        [Display(Name = "Imagem da Região")]
         [MaxLength(300, ErrorMessage = "Maximo de {1} caracteres")]
         public string RegionImage { get; set; }
 
