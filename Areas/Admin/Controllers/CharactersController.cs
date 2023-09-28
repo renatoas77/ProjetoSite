@@ -123,7 +123,7 @@ namespace FighteR_PG.Areas.Admin.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Details", "Characters", new { id = character.CharacterId});
             }
             ViewData["ArchetypeId"] = new SelectList(_context.Archetypes, "ArchetypeId", "Name", character.ArchetypeId);
             ViewData["SexId"] = new SelectList(_context.Sexes, "SexId", "SexCharacter", character.SexId);
